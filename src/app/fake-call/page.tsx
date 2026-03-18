@@ -31,13 +31,15 @@ export default function FakeCallPage() {
   const [config, setConfig] = useState<Config>(loadFromStorage);
 
   function handleStart(newConfig: Config) {
-    setConfig(newConfig);
-    saveToStorage(newConfig);
-    setScreen("call");
+    setConfig(newConfig)
+    saveToStorage(newConfig)
+    setScreen("call")
+    document.documentElement.requestFullscreen?.().catch(()=>{})
   }
 
   function handleEnd() {
-    setScreen("config");
+    setScreen("config")
+    document.exitFullscreen?.().catch(() => {})
   }
 
   return (

@@ -6,7 +6,10 @@ type Styles={
 }
 
 
+
+
 export const styles: Styles={
+    
     appWrapper:{
         minHeight: "100vh",
         display: "flex",
@@ -104,17 +107,19 @@ export const styles: Styles={
 
     callWrapper:{
         width: "100%",
-        maxWidth: 320
+        maxWidth: "100%"
     },
 
     callScreen:{
         background: "#1c1c1e",
-        borderRadius: 40,
-        padding: "40px 24px 36px",
+        borderRadius: 0,
+        padding: "10px 24px 48px",
         display: "flex",
         flexDirection: "column",
-        gap: 40,
-        boxShadow: "0 8px 40px rgba(0,0,0,0.3)"
+        gap: 100,
+        boxShadow: "none",
+        minHeight: "100vh",
+        justifyContent:"center"
     },
 
 

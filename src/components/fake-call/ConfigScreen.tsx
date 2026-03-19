@@ -141,7 +141,7 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
                         }
                     </div>
                     <label style={styles.label}>
-                        Al termine della finta-chiamata verrà visualizzata una finta-schermata Home del colore scelto.
+                        ⚠️ Al termine della finta-chiamata verrà visualizzata una finta-schermata Home del colore scelto.
                         Tutte le icone al suo interno sono finte, tranne l&#39;icona &#34;impostazioni&#34;, che potrai cliccare/toccare per tornare a questa schermata.
                     </label>
                 </div>

@@ -2,14 +2,7 @@
 import {useState, useEffect, useRef} from "react"
 import {styles} from '@/styles/fakeCall'
 import { Building2 } from "lucide-react"
-
-
-type Config={
-    callerName: string,
-    minSeconds: number,
-    maxSeconds:number
-
-}
+import { Config } from "@/types/fakeCall"
 
 type Props={
     config:Config,
@@ -102,7 +95,6 @@ export default function CallScreen({config,onEnd}: Props){
     },[])
 
 
-    const initials= getInitials(config.callerName)
 
 
     return(

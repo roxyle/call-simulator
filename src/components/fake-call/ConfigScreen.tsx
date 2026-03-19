@@ -1,10 +1,9 @@
 'use client'
-
 import {useState} from "react"
 import { FAKE_CALL_DEFAULTS } from "@/constants/fakeCall"
 import { styles } from "@/styles/fakeCall"
+import { Config } from "@/types/fakeCall"
 
-type Config= typeof FAKE_CALL_DEFAULTS
 
 type Props={
     config: Config
@@ -34,7 +33,8 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
         const newConfig={
             callerName: finalName,
             minSeconds: safeMin,
-            maxSeconds: safeMax
+            maxSeconds: safeMax,
+            wallpaperId: config.wallpaperId
         }
 
         onConfigChange(newConfig)

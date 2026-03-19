@@ -3,6 +3,7 @@ import {useState} from "react"
 import { FAKE_CALL_DEFAULTS } from "@/constants/fakeCall"
 import { styles } from "@/styles/fakeCall"
 import { Config } from "@/types/fakeCall"
+import { WALLPAPERS } from "@/constants/fakeCall"
 
 
 type Props={
@@ -17,6 +18,7 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
     const[localName,setLocalName]= useState(config.callerName)
     const[minSec,setMinSec]= useState(config.minSeconds)
     const[maxSec,setMaxSec]= useState(config.maxSeconds)
+    const[wallpaperId, setWallpaperId]=useState(config.wallpaperId)
 
 
     function applyDefault(type:"name"|"number"){
@@ -34,7 +36,7 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
             callerName: finalName,
             minSeconds: safeMin,
             maxSeconds: safeMax,
-            wallpaperId: config.wallpaperId
+            wallpaperId: wallpaperId
         }
 
         onConfigChange(newConfig)
@@ -111,6 +113,33 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
                     onChange={(elem)=> setMaxSec(Number(elem.target.value))}
                     style={styles.range}/>
 
+                </div>
+
+
+
+                <div style={styles.fieldGroup}>
+                    <label style={styles.label}>
+                        Sfondo Home Screen
+                    </label>
+                    <div style={{display:"flex", gap:8}}>
+                        {
+                            WALLPAPERS.map(
+                                (wallpaper)=>(
+                                    <div key={wallpaper.id} onClick={()=>setWallpaperId(wallpaper.id)}
+                                    style={{
+                                        flex:1,
+                                        height:48,
+                                        borderRadius:10,
+                                        background: wallpaper.gradient,
+                                        cursor:"pointer",
+                                        border: wallpaperId===wallpaper.id?"2px solid #d2691e":"2px solid transparent",
+                                        boxSizing:"border-box"
+                                    }}
+                                    />
+                                )
+                            )
+                        }
+                    </div>
                 </div>
 
 

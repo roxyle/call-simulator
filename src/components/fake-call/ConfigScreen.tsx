@@ -60,7 +60,7 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
 
                 <div style={styles.fieldGroup}>
                     <label style={styles.label}>
-                        Nome o Numero Chiamante
+                        Inserisci il Nome o il Numero del Sim-Chiamante
                     </label>
 
                     <input type="text" value={localName} onChange={(elem)=> setLocalName(elem.target.value)}
@@ -86,7 +86,7 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
 
                 <div style={styles.fieldGroup}>
                     <label style={styles.label}>
-                        Timer iniziale minimo - {" "}
+                        Timer di chiamata iniziale minimo - {" "}
 
                         <span style={styles.timerValue}>
                             {String(minMinutes).padStart(2,"0")}:
@@ -102,7 +102,7 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
 
                 <div style={styles.fieldGroup}>
                     <label style={styles.label}>
-                        Timer iniziale massimo - {" "}
+                        Timer di chiamata iniziale massimo - {" "}
                         <span style={styles.timerValue}>
                             {String(maxMinutes).padStart(2, "0")}:
                             {String(maxSecsRem).padStart(2, "0")}
@@ -119,7 +119,7 @@ export default function ConfigScreen({config, onStart, onConfigChange}:Props){
 
                 <div style={styles.fieldGroup}>
                     <label style={styles.label}>
-                        Sfondo Home Screen
+                        Scegli lo Sfondo Home Screen
                     </label>
                     <div style={{display:"flex", gap:8}}>
                         {

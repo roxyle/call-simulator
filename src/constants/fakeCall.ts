@@ -1,7 +1,7 @@
 import {Wallpaper, AppIcon} from "@/types/fakeCall"
 
 export const FAKE_CALL_DEFAULTS={
-    callerName: "Lucas Costa",
+    callerName: "CTO Cliente",
     minSeconds: 15,
     maxSeconds: 150,
     wallpaperId: "sky",
